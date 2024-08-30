@@ -23,6 +23,7 @@ import { useState, useEffect } from 'react'
 import { Input } from "@/components/ui/input"
 import Link from "next/link"
 import { Card } from "@/components/ui/card"
+import { useRouter } from 'next/navigation'
 
 interface Pokemon {
   name: string;
@@ -34,6 +35,7 @@ interface Pokemon {
 
 export function Component() {
   const [pokemon, setPokemon] = useState<Pokemon[]>([]);
+  const router = useRouter();
 
   useEffect(() => {
     async function fetchPokemon() {
@@ -49,6 +51,10 @@ export function Component() {
     }
     fetchPokemon();
   }, []);
+
+  const handlePokemonClick = (id: number) => {
+    router.push(`/pokemon/${id}`);
+  };
 
   return (
     <div className="flex min-h-screen w-full bg-background">
@@ -119,10 +125,11 @@ export function Component() {
       <main className="flex-1 p-6 md:p-10">
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {pokemon.map((p) => (
-            <Card key={p.id} className="group relative overflow-hidden rounded-lg shadow-lg">
-              <Link href="#" className="absolute inset-0 z-10" prefetch={false}>
-                <span className="sr-only">View Pokémon</span>
-              </Link>
+            <Card 
+              key={p.id} 
+              className="group relative overflow-hidden rounded-lg shadow-lg cursor-pointer"
+              onClick={() => handlePokemonClick(p.id)}
+            >
               <div className="flex items-center justify-center bg-muted/40 p-6">
                 <img
                   src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${p.id}.png`}
