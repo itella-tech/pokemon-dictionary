@@ -178,7 +178,7 @@ function getTypeIcon(type: string) {
   }
 }
 
-function BugIcon(props) {
+function BugIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
       {...props}
@@ -208,7 +208,7 @@ function BugIcon(props) {
 }
 
 
-function FlameIcon(props) {
+function FlameIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
       {...props}
@@ -228,7 +228,7 @@ function FlameIcon(props) {
 }
 
 
-function GlassWaterIcon(props) {
+function GlassWaterIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
       {...props}
@@ -249,7 +249,7 @@ function GlassWaterIcon(props) {
 }
 
 
-function LayoutGridIcon(props) {
+function LayoutGridIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
       {...props}
@@ -272,7 +272,7 @@ function LayoutGridIcon(props) {
 }
 
 
-function LeafIcon(props) {
+function LeafIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
       {...props}
@@ -293,7 +293,7 @@ function LeafIcon(props) {
 }
 
 
-function PlayIcon(props) {
+function PlayIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
       {...props}
@@ -313,7 +313,7 @@ function PlayIcon(props) {
 }
 
 
-function PowerIcon(props) {
+function PowerIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
       {...props}
@@ -334,7 +334,7 @@ function PowerIcon(props) {
 }
 
 
-function SearchIcon(props) {
+function SearchIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
       {...props}
